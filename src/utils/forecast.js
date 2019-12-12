@@ -9,8 +9,7 @@ const getForecast = (lat,long, callback)=>{
         } else if(body.error){
             callback('Incorrect cordinates. Please try with another.',undefined );
         } else{
-            callback(undefined, body.daily.data[0].summary + 'The temprature is '+ body.currently.temperature + ' degree celsius.')
-    
+            callback(undefined, body.daily.summary + 'Current temprature is '+ body.currently.temperature + ' degree celsius.The highest temprature will go to '+ body.daily.data[0].temperatureHigh + ' degree celsius and lowest it can go to '+body.daily.data[0].temperatureLow +' degree celsius in midnight.' )
         }
     })
 
